@@ -1,0 +1,39 @@
+name: telegrambot-testbot
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  testbot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TELEGRAM_TEST_TOKEN: ${{ secrets.TELEGRAM_TEST_TOKEN }}
+      GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          cd agora/apps/telegrambot
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run testbot
+        run: |
+          cd agora/apps/telegrambot
+          source .venv/bin/activate
+          nohup python run_testbot.py &
+          sleep 10
+          # 실제 메시지 응답은 수동으로 확인 필요 (로그로 Application started 등 확인)

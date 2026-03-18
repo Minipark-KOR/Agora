@@ -1,0 +1,3 @@
+# 프로젝트 의존성 파일 (requirements.txt)
+pytest
+tiktoken

@@ -1,0 +1,13 @@
+{
+  "date": "2026-03-16",
+  "generated_at": "2026-03-16T00:10:15.650721+09:00",
+  "source_processed_dir": "/Users/minipark4u/Documents/chronicle/processed",
+  "outputs": {
+    "en": "/Users/minipark4u/Documents/chronicle/processed/daily/chat_en_2026-03-16.jsonl",
+    "ko_review": "/Users/minipark4u/Documents/chronicle/processed/daily/chat_ko_review_2026-03-16.jsonl"
+  },
+  "counts": {
+    "en": 0,
+    "ko_review": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-03-15",
+  "generated_at": "2026-03-15T16:36:24.852165+09:00",
+  "source_training_dir": "/Users/minipark4u/Documents/manage_ai/chat_backup/training",
+  "outputs": {
+    "en": "/Users/minipark4u/Documents/manage_ai/chat_backup/daily/chat_training_en_2026-03-15.jsonl",
+    "ko_review": "/Users/minipark4u/Documents/manage_ai/chat_backup/daily/chat_training_ko_review_2026-03-15.jsonl"
+  },
+  "counts": {
+    "en": 314,
+    "ko_review": 314
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "processed": {
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T162706.json": {
+      "marker": "1773559627.0844162:99085259",
+      "processed_at": "2026-03-16T00:26:02.158705+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T162721.json": {
+      "marker": "1773559642.7542977:99085259",
+      "processed_at": "2026-03-16T00:26:03.368436+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T162753.json": {
+      "marker": "1773559674.2646024:99374105",
+      "processed_at": "2026-03-16T00:26:04.326479+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T162853.json": {
+      "marker": "1773559734.0750713:99415833",
+      "processed_at": "2026-03-16T00:26:05.420182+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T162952.json": {
+      "marker": "1773559793.6436489:99455626",
+      "processed_at": "2026-03-16T00:26:06.662476+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163052.json": {
+      "marker": "1773559853.3388383:99551693",
+      "processed_at": "2026-03-16T00:26:07.754334+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163106.json": {
+      "marker": "1773559867.6293821:99551693",
+      "processed_at": "2026-03-16T00:26:08.747608+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163152.json": {
+      "marker": "1773559913.674098:99568425",
+      "processed_at": "2026-03-16T00:26:09.889428+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163212.json": {
+      "marker": "1773559934.010852:99568425",
+      "processed_at": "2026-03-16T00:26:10.933587+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163231.json": {
+      "marker": "1773559952.7229514:99568425",
+      "processed_at": "2026-03-16T00:26:11.980810+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163252.json": {
+      "marker": "1773559973.2297158:99604460",
+      "processed_at": "2026-03-16T00:26:13.106967+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163352.json": {
+      "marker": "1773560033.4241822:99769765",
+      "processed_at": "2026-03-16T00:26:14.290644+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163453.json": {
+      "marker": "1773560094.0073423:99770036",
+      "processed_at": "2026-03-16T00:26:15.446171+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163552.json": {
+      "marker": "1773560153.9331367:99798006",
+      "processed_at": "2026-03-16T00:26:16.641577+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163653299796.json": {
+      "marker": "1773560214.2064419:99841433",
+      "processed_at": "2026-03-16T00:26:17.787717+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163753162681.json": {
+      "marker": "1773560274.1267545:100289986",
+      "processed_at": "2026-03-16T00:26:19.062347+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163853104692.json": {
+      "marker": "1773560334.0167594:100317454",
+      "processed_at": "2026-03-16T00:26:20.246914+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T163953116535.json": {
+      "marker": "1773560394.0953455:100330024",
+      "processed_at": "2026-03-16T00:26:21.444167+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164053765769.json": {
+      "marker": "1773560455.180307:100354872",
+      "processed_at": "2026-03-16T00:26:22.669834+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164152863510.json": {
+      "marker": "1773560513.9035363:100383835",
+      "processed_at": "2026-03-16T00:26:23.938989+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164253487646.json": {
+      "marker": "1773560574.4303038:100397700",
+      "processed_at": "2026-03-16T00:26:25.083995+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164327837759.json": {
+      "marker": "1773560609.0699816:100619178",
+      "processed_at": "2026-03-16T00:26:26.295183+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164352770210.json": {
+      "marker": "1773560633.738362:100620460",
+      "processed_at": "2026-03-16T00:26:27.305396+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164453244900.json": {
+      "marker": "1773560694.2004998:100688575",
+      "processed_at": "2026-03-16T00:26:28.500856+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164506316489.json": {
+      "marker": "1773560707.3706968:100709024",
+      "processed_at": "2026-03-16T00:26:29.688044+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164553511597.json": {
+      "marker": "1773560754.4367414:100805179",
+      "processed_at": "2026-03-16T00:26:30.869276+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164653531473.json": {
+      "marker": "1773560814.4402509:100900415",
+      "processed_at": "2026-03-16T00:26:31.922869+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164752811934.json": {
+      "marker": "1773560873.7279189:100938479",
+      "processed_at": "2026-03-16T00:26:33.002144+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164811349776.json": {
+      "marker": "1773560892.522948:100984088",
+      "processed_at": "2026-03-16T00:26:34.173252+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T164853562897.json": {
+      "marker": "1773560934.7670183:100984500",
+      "processed_at": "2026-03-16T00:26:35.389468+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165002740849.json": {
+      "marker": "1773561003.650944:100999786",
+      "processed_at": "2026-03-16T00:26:36.641276+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165041547379.json": {
+      "marker": "1773561042.5364442:101006493",
+      "processed_at": "2026-03-16T00:26:37.792023+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165054768749.json": {
+      "marker": "1773561055.789288:101049479",
+      "processed_at": "2026-03-16T00:26:39.002584+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165154048328.json": {
+      "marker": "1773561115.0114248:101049826",
+      "processed_at": "2026-03-16T00:26:40.070819+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165218958982.json": {
+      "marker": "1773561139.8767686:101056692",
+      "processed_at": "2026-03-16T00:26:41.274752+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165254443977.json": {
+      "marker": "1773561175.3647707:101098232",
+      "processed_at": "2026-03-16T00:26:42.282382+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165354384651.json": {
+      "marker": "1773561235.3201492:101177464",
+      "processed_at": "2026-03-16T00:26:43.453357+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165454743414.json": {
+      "marker": "1773561296.047709:101205865",
+      "processed_at": "2026-03-16T00:26:44.604080+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165529208977.json": {
+      "marker": "1773561330.1780486:101219385",
+      "processed_at": "2026-03-16T00:26:45.872798+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165554012875.json": {
+      "marker": "1773561355.0110078:101227803",
+      "processed_at": "2026-03-16T00:26:47.070892+09:00"
+    },
+    "/Users/minipark4u/Documents/manage_ai/chat_backup/raw/raw_20260315T165612583343.json": {
+      "marker": "1773561373.5519595:101234315",
+      "processed_at": "2026-03-16T00:26:48.380983+09:00"
+    }
+  }
+}

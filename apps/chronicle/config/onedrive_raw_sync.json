@@ -1,0 +1,11 @@
+{
+  "tenant_id": "",
+  "client_id": "",
+  "client_secret": "",
+  "drive_id": "",
+  "remote_raw_dir": "app/chronicle/data/refined",
+  "raw_dir": "app/chronicle/data/refined",
+  "retention_days": 7,
+  "delete_uploaded_only": true,
+  "state_file": "app/chronicle/data/state/onedrive_raw_state.json"
+}
