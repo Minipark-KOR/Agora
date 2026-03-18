@@ -1,0 +1,39 @@
+# (이전 위치에서 복사)
+# 기존 telegram_bot.yml 파일의 내용을 agora/.github/workflows/telegram_bot.yml 로 이동합니다.
+# 아래 내용은 현재 /Users/minipark4u/project/.github/workflows/telegram_bot.yml 파일의 전체 내용입니다.
+
+name: Telegram Bot CI/CD
+
+on:
+  push:
+    paths:
+      - 'agora/apps/telegrambot/**'
+      - '.github/workflows/telegram_bot.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          cd agora/apps/telegrambot
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Bot
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          cd agora/apps/telegrambot
+          python run_bot.py
