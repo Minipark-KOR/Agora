@@ -133,4 +133,5 @@ build/
 test_*.*
 *_test.*
 *_test_*.*
-raw_data/
+data/chronicle/data/chronicle/
+data/chronicle/
