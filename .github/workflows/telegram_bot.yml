@@ -31,7 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd agora/apps/telegrambot
+          cd apps/telegrambot
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -41,5 +41,5 @@ jobs:
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          cd agora/apps/telegrambot
+          cd apps/telegrambot
           python run_bot.py
