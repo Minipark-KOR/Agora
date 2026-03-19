@@ -2,19 +2,18 @@ module.exports = {
   apps: [
     {
       name: "telegrambot",
-      script: "./apps/telegrambot/run_bot.py",
-      // 서버 내 가상환경의 파이썬 실행 파일 경로 지정
+      // cwd를 사용하거나, script 경로를 최상위 루트 기준으로 한 번만 적어야 합니다.
+      script: "./apps/telegrambot/run_bot.py", 
+      cwd: "/home/azureuser/agora", // 기준 디렉토리를 프로젝트 루트로 고정
       interpreter: "./apps/telegrambot/.venv/bin/python3",
-      instances: 1,
-      autorestart: true,
-      watch: false,
+      watch: ["apps/telegrambot"],
+      ignore_watch: ["logs", "data", "temp", "node_modules"],
       env_production: {
         NODE_ENV: "production",
-        // GitHub Actions에서 export한 변수를 PM2가 받아옴
         TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
         TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
         GEMINI_KEY: process.env.GEMINI_KEY
       }
     }
   ]
-}
+};
