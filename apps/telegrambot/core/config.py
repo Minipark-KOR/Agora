@@ -12,11 +12,12 @@ if not os.environ.get("TELEGRAM_TOKEN") or not os.environ.get("GEMINI_KEY"):
     load_dotenv(dotenv_path)
 
 
-# 로그 디렉토리: ~/data/telegrambot/logs
-LOG_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../data/telegrambot/logs"))
 
-# 임시 파일 디렉토리: ~/data/telegrambot/temp (1일마다 자동 삭제)
-TEMP_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../data/telegrambot/temp"))
+# 로그 디렉토리: ~/data/telegrambot/logs/{봇이름}
+LOG_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../data/telegrambot/logs", BOT_NAMES["TELEGRAM"]))
+
+# 임시 파일 디렉토리: ~/data/telegrambot/temp/{봇이름} (1일마다 자동 삭제)
+TEMP_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../data/telegrambot/temp", BOT_NAMES["TELEGRAM"]))
 
 
 # 환경변수에서 토큰과 ID 읽기 (시크릿 우선)
@@ -38,8 +39,6 @@ BOT_NAMES = {
     "TELEGRAM": "mesids_bot"
 }
 
-# 로그 디렉토리 생성 (봇 이름 하위 폴더까지)
-os.makedirs(os.path.join(LOG_DIR, BOT_NAMES["TELEGRAM"]), exist_ok=True)
-
-# 임시 디렉토리 생성
+# 로그/임시 디렉토리 생성 (봇 이름 하위 폴더까지)
+os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(TEMP_DIR, exist_ok=True)

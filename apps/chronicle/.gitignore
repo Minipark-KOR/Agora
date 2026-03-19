@@ -10,7 +10,6 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 Icon?
-._*
 .Spotlight-V100
 .Trashes
 
@@ -46,7 +45,6 @@ Icon?
 # Vim/Emacs
 *.swp
 *.swo
-*~
 
 # ============================================================
 # 4. Python
@@ -81,8 +79,6 @@ ENV/
 *.PEM
 *.KEY
 *.PUB
-# 나이스 인증키(삭제 금지)
-NEIS_KEYS_JSON.json
 
 # ============================================================
 # 6. Microsoft Office temporary files
@@ -133,4 +129,6 @@ build/
 test_*.*
 *_test.*
 *_test_*.*
-raw_data/
+data/chronicle/
+# 나이스 인증키(삭제 금지)
+NEIS_KEYS_JSON.json

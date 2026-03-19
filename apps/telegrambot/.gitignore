@@ -51,6 +51,7 @@ Icon?
 # ============================================================
 __pycache__/
 .pytest_cache/
+*.py[cod]
 *$py.class
 *.pyc
 *.pyo
@@ -78,8 +79,6 @@ ENV/
 *.PEM
 *.KEY
 *.PUB
-# 나이스 인증키(삭제 금지)
-NEIS_KEYS_JSON.json
 
 # ============================================================
 # 6. Microsoft Office temporary files
@@ -130,4 +129,6 @@ build/
 test_*.*
 *_test.*
 *_test_*.*
-raw/
+data/chronicle/
+# 나이스 인증키(삭제 금지)
+NEIS_KEYS_JSON.json
