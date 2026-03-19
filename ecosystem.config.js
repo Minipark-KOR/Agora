@@ -1,15 +1,12 @@
 module.exports = {
   apps: [{
     name: "telegrambot",
-    script: "./apps/telegrambot/run_bot.py",
     cwd: "/home/azureuser/agora",
-    interpreter: "./apps/telegrambot/.venv/bin/python3",
-    // 핵심: 시스템 환경변수를 PM2 내부 변수로 '매핑'만 합니다.
+    script: "apps/telegrambot/run_bot.py",
+    out_file: '/dev/null',   // 일반 출력 로그 기록 안 함
+    error_file: '/home/azureuser/.pm2/logs/telegrambot-error.log',
+    interpreter: "/home/azureuser/agora/apps/telegrambot/.venv/bin/python3",
     env_production: {
-      NODE_ENV: "production",
-      TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
-      TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
-      GEMINI_KEY: process.env.GEMINI_KEY
-    }
+      NODE_ENV: "production",    }
   }]
 }

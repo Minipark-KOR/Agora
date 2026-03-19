@@ -14,7 +14,7 @@ class KernelService:
         logger = logging.getLogger(self.name)
         if not logger.hasHandlers():
             logging.basicConfig(
-                level=logging.INFO,
+                level=logging.WARNING,
                 format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                 handlers=[
                     logging.FileHandler(os.path.join(self.log_dir, 'service.log')),
