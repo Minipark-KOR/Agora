@@ -2,30 +2,31 @@ import os
 import json
 import asyncio
 from datetime import date
-import core.config as config
+from core.config import settings
 import aiofiles
+from pathlib import Path
+
 
 class UsageCounter:
     def __init__(self, bot_application, logger):
         self.bot_app = bot_application
         self.logger = logger
 
-        # config.BASE_DIR을 사용하여 프로젝트 루트 지정
-        self.project_root = config.BASE_DIR
-        self.data_dir = os.path.join(self.project_root, 'data')
-        os.makedirs(self.data_dir, exist_ok=True)
+        # settings.DATA_DIR 사용
+        self.data_dir = Path(settings.DATA_DIR)
+        self.data_dir.mkdir(parents=True, exist_ok=True)
 
-        self.usage_file = os.path.join(self.data_dir, 'usage_count.json')
-        self.notify_file = os.path.join(self.data_dir, 'notified.json')
-        self.admin_chat_id = config.ADMIN_CHAT_ID
-        self.total_quota = config.TOTAL_QUOTA
+        self.usage_file = self.data_dir / 'usage_count.json'
+        self.notify_file = self.data_dir / 'notified.json'
+        self.admin_chat_id = settings.ADMIN_CHAT_ID
+        self.total_quota = settings.TOTAL_QUOTA
         self._lock = asyncio.Lock()
 
         self.logger.info(f"UsageCounter initialized: {self.usage_file}")
 
     async def _read_usage(self):
         today = str(date.today())
-        if os.path.exists(self.usage_file):
+        if self.usage_file.exists():
             try:
                 async with aiofiles.open(self.usage_file, 'r') as f:
                     content = await f.read()
@@ -47,7 +48,7 @@ class UsageCounter:
 
     async def _has_notified(self, threshold):
         today = str(date.today())
-        if os.path.exists(self.notify_file):
+        if self.notify_file.exists():
             try:
                 async with aiofiles.open(self.notify_file, 'r') as f:
                     content = await f.read()
@@ -62,7 +63,7 @@ class UsageCounter:
         today = str(date.today())
         async with self._lock:
             try:
-                if os.path.exists(self.notify_file):
+                if self.notify_file.exists():
                     async with aiofiles.open(self.notify_file, 'r') as f:
                         content = await f.read()
                         data = json.loads(content)

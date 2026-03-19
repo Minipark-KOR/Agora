@@ -59,6 +59,7 @@ pm2 save
 
 ## 📁 디렉토리 구조 (최종)
 
+
 ```
 /home/azureuser/app/telegrambot/
 ├── core/
@@ -77,8 +78,6 @@ pm2 save
 │   │       ├── bot.py
 │   │       └── usage_counter.py      # 사용량 카운트 모듈
 ├── data/                               # 데이터 저장 폴더 (자동 생성)
-│   ├── logs/                           # 로그 파일 저장
-│   │   └── mesids_bot/
 │   ├── temp/                            # 임시 파일 저장 (24시간 후 자동 삭제)
 │   ├── usage_count.json                 # 일일 사용량 기록
 │   └── notified.json                    # 알림 전송 기록
@@ -86,6 +85,24 @@ pm2 save
 ├── requirements.txt
 ├── run_bot.py
 ```
+
+
+## 🚩 필수 환경 및 의존성
+
+- **Python 3.8 이상** 필요 (venv 내장)
+- **Node.js** 필요 (pm2 설치용)
+- **pm2**: 프로세스 매니저 (개발/운영 모두 권장)
+- **systemd**: 운영 환경 자동 실행 시 필요
+- **tiktoken**: 토큰 최적화/메시지 전처리(lean/token_utils) 사용 시 필요
+- **pytest**: 테스트 자동화 필요 시
+
+### 주요 명령어/설정
+- `.env` 파일로 환경변수 관리 (예시 아래 참고)
+- `python3 -m venv .venv`로 가상환경 생성 및 활성화
+- `pip install -r requirements.txt`로 의존성 설치
+- pm2, systemd 모두 지원 (아래 예시 참고)
+
+---
 
 ## 🚀 설치 및 초기 설정
 
@@ -98,13 +115,21 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-`requirements.txt`:
+
+`requirements.txt` 주요 항목:
 
 ```txt
 python-dotenv>=1.0.0
 google-genai>=1.0.0
-python-telegram-bot>=20.0
-python-telegram-bot[job-queue]
+python-telegram-bot[job-queue]>=20.0
+aiofiles>=23.2.0
+pytz>=2023.3
+aiohttp>=3.0.0
+nest_asyncio>=1.5.0
+sniffio>=1.3.0
+httpx>=0.27.0
+tiktoken>=0.5.2
+pytest>=7.0.0
 ```
 
 ### 2. 환경 변수 설정
@@ -161,7 +186,9 @@ sed -i 's/from kernel\./from core.kernel./g' core/kernel/**/*.py
 - 별도의 크론탭 설정 없이, 봇이 실행 중이면 자동으로 동작합니다.
 
 ### 로그 파일 위치
-- 모든 로그는 `data/logs/mesids_bot/`에 저장됩니다. (기존 `logs/` 폴더에서 변경됨)
+- 로그 파일은 `LOG_DIR` 환경변수로 지정된 디렉토리 아래 `mesids_bot/service.jsonl`에 저장됩니다.
+- 기본값: `/var/log/agora/telegrambot/mesids_bot/service.jsonl` (`.env`에서 `LOG_DIR` 변경 가능)
+- 로그는 JSON Lines 형식이며, 10MB 단위로 로테이션됩니다 (최대 5개 백업).
 
 ## 🏃 수동 실행
 
@@ -242,8 +269,8 @@ cat ~/app/telegrambot/data/usage_count.json
 # 알림 기록 확인
 cat ~/app/telegrambot/data/notified.json
 
-# 로그 파일 확인
-ls -la ~/app/telegrambot/data/logs/mesids_bot/
+# 로그 파일 확인 (운영 기본 경로)
+ls -la /var/log/agora/telegrambot/mesids_bot/
 ```
 
 ## 🔄 재부팅 테스트
@@ -277,7 +304,7 @@ find ~/app/telegrambot -type d -name "__pycache__" -exec rm -rf {} +
 ## 📝 참고 사항
 
 - 봇 이름은 `mesids_bot`으로 설정되어 있습니다. (`core/config.py`의 `BOT_NAMES`에서 변경 가능)
-- 로그 파일은 `~/app/telegrambot/data/logs/mesids_bot/`에 저장됩니다.
+- 로그 파일은 `LOG_DIR` 환경변수로 지정된 디렉토리 아래 `mesids_bot/service.jsonl`에 저장됩니다. 기본값은 `/var/log/agora/telegrambot/mesids_bot/`입니다.
 - Gemini AI 모델은 `gemini-2.5-flash-lite`를 사용합니다. (필요시 `core/kernel/agents/gemini.py`에서 변경)
 - 사용량 카운트 및 알림 기능은 별도 모듈(`usage_counter.py`)로 분리되어 있어 유지보수가 용이합니다.
 

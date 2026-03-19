@@ -1,5 +1,32 @@
 ```markdown
 # 📘 Project Bot Guide (agora 프로젝트)
+## Notifier 앱 구조 및 실행 방식 (최신)
+
+Notifier는 독립적인 알림 중앙 서비스로, HTTP API를 통해 다양한 Provider(Telegram, Email 등)로 알림을 전송합니다.
+
+### 실행
+```bash
+cd apps/notifier
+uvicorn api.main:app --reload --port 8001
+```
+
+환경변수는 `.env` 또는 시스템 환경변수로 관리하며, Pydantic Settings를 사용해 부수효과 없는 구조를 유지합니다.
+
+### Provider 추가 방법
+1. `providers/`에 새 파일 생성 (예: `slack.py`)
+2. `NotificationProvider`를 상속받아 `async def send(self, text)` 구현
+3. `providers/__init__.py`의 `_providers` 딕셔너리에 추가
+4. 필요시 core/config.py에 환경변수 추가
+
+기존 API 코드는 수정할 필요 없습니다.
+
+### 구조적 특징
+- channels/, server.py, config.py 등 legacy 코드/폴더는 완전히 제거됨
+- main.py 기준 실행, providers/ 기반 구조로 통일
+- 각 앱은 완전히 독립적으로 동작하며, core/에는 순수 라이브러리와 추상 베이스 클래스만 존재
+- 앱 간 통신은 HTTP API로만 연결, requirements.txt, README.md, .env 등 각 앱별로 관리
+
+---
 
 이 문서는 여러 개의 독립적인 앱(봇)을 느슨하게 연결하여 운영하는 구체적인 방법을 다룹니다.  
 환경변수 기반 설정, 디렉토리 구조, 로깅, 통신 방식, 운영 환경에서의 시스템 디렉토리 활용, PM2 watch 자동 재시작 전략, 테스트 파일 관리, ignore 파일 설정, 그리고 단계별 적용 계획까지 모두 포함합니다.

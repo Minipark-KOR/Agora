@@ -93,9 +93,14 @@ ENV/
 # 7. Data, logs, and temporary files (project-specific)
 # ============================================================
 logs/
+Logs/
+log/
+Log/
 trash/
 temp/
 cache/
+Docs/
+docs/
 *.log
 *.tmp
 *.temp
