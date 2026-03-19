@@ -21,29 +21,23 @@ jobs:
           host: ${{ secrets.AZURE_PUB_IP }}
           username: azureuser
           key: ${{ secrets.AZURE_SSH_KEY }}
-          # secrets를 script 내부에서 바로 사용할 수 있도록 설정
+          # [중요] GitHub Secrets를 서버 쉘 변수로 노출시킵니다.
           envs: TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, GEMINI_KEY
-        with:
           script: |
-            # 1. 프로젝트 폴더 이동 및 업데이트
             cd ~/agora
             git pull origin main
             
-            # 2. 가상환경 및 의존성 관리
+            # 의존성 업데이트
             cd apps/telegrambot
-            if [ ! -d ".venv" ]; then
-                python3 -m venv .venv
-            fi
             ./.venv/bin/pip install -r requirements.txt
             
-            # 3. [핵심] PM2 재시작 시점에 변수를 직접 주입
-            # 이 한 줄이 '서버 수동 입력'과 '보안' 문제를 동시에 해결합니다.
+            # [핵심] PM2 재시작 시점에 변수를 주입하며 '--update-env'를 꼭 붙입니다.
             cd ~/agora
-            TELEGRAM_TOKEN="${{ secrets.TELEGRAM_TOKEN }}" \
-            TELEGRAM_CHAT_ID="${{ secrets.TELEGRAM_CHAT_ID }}" \
-            GEMINI_KEY="${{ secrets.GEMINI_KEY }}" \
+            TELEGRAM_TOKEN="$TELEGRAM_TOKEN" \
+            TELEGRAM_CHAT_ID="$TELEGRAM_CHAT_ID" \
+            GEMINI_KEY="$GEMINI_KEY" \
             pm2 restart ecosystem.config.js --env production --update-env
             
-            # 4. 상태 저장
             pm2 save
+
             
