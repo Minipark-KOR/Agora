@@ -10,7 +10,6 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 Icon?
-._*
 .Spotlight-V100
 .Trashes
 
@@ -46,13 +45,14 @@ Icon?
 # Vim/Emacs
 *.swp
 *.swo
-*~
 
 # ============================================================
 # 4. Python
 # ============================================================
 __pycache__/
 .pytest_cache/
+.coverage
+htmlcov/
 *.py[cod]
 *$py.class
 *.pyc
@@ -81,8 +81,6 @@ ENV/
 *.PEM
 *.KEY
 *.PUB
-# 나이스 인증키(삭제 금지)
-NEIS_KEYS_JSON.json
 
 # ============================================================
 # 6. Microsoft Office temporary files
@@ -126,12 +124,21 @@ target/
 *.so
 *.dylib
 build/
+dist/
 
 # ============================================================
-# 9. 로컬 개발 테스트 파일
+# 9. 데이터 베이스 파일
+# ============================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================
+# 10. 로컬 개발 테스트 파일
 # ============================================================
 test_*.*
 *_test.*
 *_test_*.*
-data/chronicle/data/chronicle/
-data/chronicle/
+data/
+# 나이스 인증키(삭제 금지)
+NEIS_KEYS_JSON.json
